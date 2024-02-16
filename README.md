@@ -5,20 +5,27 @@ The script acts as a TCP proxy server, forwarding traffic between client connect
 
 ## Usage: 
 1. Run the script (python your_script_name.py).
+
 2. When prompted, enter the desired proxy port number.
+
 3. Enter the target host address (e.g., "www.example.com").
+
 4. Enter the target port number (e.g., 80 for HTTP).
+
 5. The proxy server starts listening on the specified port.
 
 ## How it works:
 1.Clients connect to the proxy server on the defined port.
+
 2.For each client connection, a new thread is created.
+
 3.The thread handles the client connection:
  -Receives data from the client up to a maximum of 4096 bytes.
  -Establishes a connection to the target host and port.
  -Forwards the received data to the target host.
  -Receives the response from the target host.
  -Sends the response back to the client.
+
 5.Both client and target connections are closed after data transfer is complete.
 
 ## Dependencies:
